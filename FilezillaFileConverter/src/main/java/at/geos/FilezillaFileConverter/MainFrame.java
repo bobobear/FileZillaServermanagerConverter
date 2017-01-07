@@ -13,13 +13,19 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 
 public class MainFrame extends JFrame{
 	
 	private ActionListener controller;
-	private static String TITLE = "FileZilla Servermanager File Converter";
+	
 	private JTextField textFieldSourceFile;
 	private JTextField textFieldTargetFile;
+	
+	private static final String TITLE = "FileZilla Servermanager File Converter";
+	private static final String BTN_SOURCE_FILE = "btnSourceFile";
+	private static final String BTN_TARGET_FILE = "btnTargetFile";
+	private static final String BTN_CREATE = "btnCREATE";
 	
 	public MainFrame(ActionListener controller) {
 		super(TITLE);
@@ -28,7 +34,6 @@ public class MainFrame extends JFrame{
 		setSize(633, 302);
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-	    Container container = getContentPane();
 	    getContentPane().setLayout(null);
 	    
 	    textFieldSourceFile = new JTextField();
@@ -43,10 +48,14 @@ public class MainFrame extends JFrame{
 	    
 	    JButton btnSourceFile = new JButton("Source File");
 	    btnSourceFile.setBounds(211, 68, 97, 25);
+	    btnSourceFile.addActionListener(controller);
+	    btnSourceFile.setActionCommand(BTN_SOURCE_FILE);
 	    getContentPane().add(btnSourceFile);
 	    
 	    JButton btnTargetFile = new JButton("Target File");
 	    btnTargetFile.setBounds(211, 103, 97, 25);
+	    btnTargetFile.addActionListener(controller);
+	    btnTargetFile.setActionCommand(BTN_TARGET_FILE);
 	    getContentPane().add(btnTargetFile);
 	    
 	    JRadioButton rdbtnBase64 = new JRadioButton("plaintext -> base64");
@@ -66,6 +75,12 @@ public class MainFrame extends JFrame{
 	    lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 13));
 	    lblNewLabel.setBounds(8, 13, 595, 33);
 	    getContentPane().add(lblNewLabel);
+	    
+	    JButton btnCreate = new JButton("Create");
+	    btnCreate.addActionListener(controller);
+	    btnCreate.setBounds(12, 195, 97, 25);
+	    btnCreate.setActionCommand(BTN_CREATE);
+	    getContentPane().add(btnCreate);
 	}
 
 	public ActionListener getController() {
