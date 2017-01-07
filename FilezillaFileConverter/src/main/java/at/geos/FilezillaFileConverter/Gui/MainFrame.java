@@ -1,22 +1,19 @@
-package at.geos.FilezillaFileConverter;
+package at.geos.FilezillaFileConverter.Gui;
 
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
+import java.awt.Font;
 import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JRadioButton;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
 public class MainFrame extends JFrame{
 	
+	private static final long serialVersionUID = 1L;
+
 	private ActionListener controller;
 	
 	private JTextField textFieldSourceFile;

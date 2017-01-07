@@ -1,7 +1,9 @@
-package at.geos.FilezillaFileConverter;
+package at.geos.FilezillaFileConverter.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import at.geos.FilezillaFileConverter.Gui.MainFrame;
 
 public class Controller implements ActionListener{
 
@@ -11,7 +13,8 @@ public class Controller implements ActionListener{
 	
 	private MainFrame mainFrame;
 	
-	public Controller() {
+	
+	public void initializeApp(){
 		mainFrame = new MainFrame(this);
 		mainFrame.setVisible(true);
 	}
