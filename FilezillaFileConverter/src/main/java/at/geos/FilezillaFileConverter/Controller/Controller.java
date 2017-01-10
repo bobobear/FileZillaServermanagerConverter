@@ -23,9 +23,11 @@ public class Controller implements ActionListener{
 		switch (e.getActionCommand()) {
 		case BTN_SOURCE_FILE:
 			System.out.println(BTN_SOURCE_FILE);
+			mainFrame.showSourceFileChooser();
 			break;
 		case BTN_TARGET_FILE:
 			System.out.println(BTN_TARGET_FILE);
+			mainFrame.showTargetFileChooser();
 			break;
 		case BTN_CREATE:
 			System.out.println(BTN_CREATE);

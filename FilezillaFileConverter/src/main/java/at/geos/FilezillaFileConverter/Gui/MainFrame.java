@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -18,6 +19,8 @@ public class MainFrame extends JFrame{
 	
 	private JTextField textFieldSourceFile;
 	private JTextField textFieldTargetFile;
+	JFileChooser sourceFileChooser;
+	JFileChooser targetFileChooser;
 	
 	private static final String TITLE = "FileZilla Servermanager File Converter";
 	private static final String BTN_SOURCE_FILE = "btnSourceFile";
@@ -78,13 +81,28 @@ public class MainFrame extends JFrame{
 	    btnCreate.setBounds(12, 195, 97, 25);
 	    btnCreate.setActionCommand(BTN_CREATE);
 	    getContentPane().add(btnCreate);
+	    
+	    sourceFileChooser = new JFileChooser();
+	    
+	    targetFileChooser = new JFileChooser();
 	}
 
 	public ActionListener getController() {
 		return controller;
 	}
 
+	public void showSourceFileChooser() {
+		this.sourceFileChooser.showOpenDialog(this);
+	}
+	
+	public void showTargetFileChooser() {
+		this.targetFileChooser.showSaveDialog(this);
+		
+	}
+	
 	public void setController(ActionListener controller) {
 		this.controller = controller;
 	}
+
+	
 }
