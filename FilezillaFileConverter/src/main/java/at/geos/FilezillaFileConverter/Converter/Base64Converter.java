@@ -2,6 +2,13 @@ package at.geos.FilezillaFileConverter.Converter;
 
 import java.util.Base64.Encoder;
 
+/**
+ * Converts plaintext stored passwords to Base64 encoded 
+ * 
+ * @author geos
+ *
+ */
+
 public class Base64Converter extends Converter {
 
 	@Override
