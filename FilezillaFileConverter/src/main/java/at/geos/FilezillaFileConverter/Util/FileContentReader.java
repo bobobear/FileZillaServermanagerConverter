@@ -1,4 +1,5 @@
 package at.geos.FilezillaFileConverter.Util;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,16 +9,15 @@ import java.io.InputStreamReader;
 
 import at.geos.FilezillaFileConverter.Exception.FileReadException;
 
-public class FileReader {
-	
+public class FileContentReader {
+
 	public String readFile(String filePath) {
-		
-		StringBuilder sb = new StringBuilder();;
+
+		StringBuilder sb = new StringBuilder();
 		try {
-			BufferedReader br = new BufferedReader(
-					new InputStreamReader(new FileInputStream(new File(filePath))));
+			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(new File(filePath))));
 			String line;
-			while((line = br.readLine()) != null) {
+			while ((line = br.readLine()) != null) {
 				sb.append(line);
 			}
 			br.close();
@@ -26,7 +26,7 @@ public class FileReader {
 			throw new FileReadException(e);
 		} catch (IOException e) {
 			throw new FileReadException(e);
-		}		
+		}
 		return sb.toString();
 	}
 

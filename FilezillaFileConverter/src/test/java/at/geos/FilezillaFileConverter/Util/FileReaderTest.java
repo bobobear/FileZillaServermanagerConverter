@@ -17,7 +17,7 @@ import at.geos.FilezillaFileConverter.Exception.FileReadException;
 public class FileReaderTest {
 
 	private final String FILE_CONTENT = "FileContent";
-	private FileReader fileReader;
+	private FileContentReader fileReader;
 	private File file;
 	
 	@Rule
@@ -26,7 +26,7 @@ public class FileReaderTest {
 	@Before
 	public void setup() {
 		
-		fileReader = new FileReader();			
+		fileReader = new FileContentReader();			
 		try {
 			file = folder.newFile("testfile.txt");
 			BufferedWriter br = new BufferedWriter(new FileWriter(file));

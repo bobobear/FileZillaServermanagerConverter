@@ -1,10 +1,11 @@
 package at.geos.FilezillaFileConverter.Exception;
 
-public class FileReadException extends RuntimeException {
+public class FileWriteException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
-	public FileReadException(Exception e) {
+	public FileWriteException(Exception e) {
 		super(e);
 	}
+
 }
